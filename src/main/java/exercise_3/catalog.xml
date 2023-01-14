@@ -1,0 +1,17 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<catalog>
+    <city size="big">
+        Kyiv
+        <street>
+            Honoré de Balzac
+            <building>10</building>
+        </street>
+    </city>
+    <city size="big">
+        Kharkiv
+        <street>
+            Azovstalska
+            <building>13</building>
+        </street>
+    </city>
+</catalog>
