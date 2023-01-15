@@ -1,19 +1,14 @@
 package exercise_4;
 
-import javax.xml.bind.annotation.XmlAnyAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.*;
 
+@XmlType(propOrder = {"name","street", "building"})
 @XmlRootElement(name = "city")
 public class City {
-    @XmlAnyAttribute
-    private String size;
 
-    @XmlElement(name = "city1")
+    private String size;
     private String name;
-    @XmlElement
     private String street;
-    @XmlElement
     private String building;
 
     public City() {
@@ -29,7 +24,7 @@ public class City {
     public String getSize() {
         return size;
     }
-
+    @XmlAttribute
     public void setSize(String size) {
         this.size = size;
     }
@@ -37,7 +32,7 @@ public class City {
     public String getStreet() {
         return street;
     }
-
+    @XmlElement
     public void setStreet(String street) {
         this.street = street;
     }
@@ -45,7 +40,7 @@ public class City {
     public String getBuilding() {
         return building;
     }
-
+    @XmlElement
     public void setBuilding(String building) {
         this.building = building;
     }
@@ -53,7 +48,7 @@ public class City {
     public String getName() {
         return name;
     }
-
+    @XmlElement(name = "city")
     public void setName(String name) {
         this.name = name;
     }

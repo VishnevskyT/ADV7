@@ -3,6 +3,7 @@ package exercise_4;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
 import java.io.File;
 
 /**
@@ -24,9 +25,16 @@ public class JAXBtesting {
 
             JAXBContext jaxbContext = JAXBContext.newInstance(Catalog.class);
             Marshaller marshaller = jaxbContext.createMarshaller();
-            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, false);
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             marshaller.marshal(catalog, file);
             marshaller.marshal(catalog,System.out);
+
+        System.out.println("=====================================================");
+
+        Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
+        catalog = (Catalog) unmarshaller.unmarshal(file);
+        System.out.println(catalog);
+
 
     }
 
